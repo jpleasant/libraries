@@ -1,1 +1,1 @@
-# core-components-react
+# Open Source libraries for varied uses
