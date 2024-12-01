@@ -1,0 +1,23 @@
+{
+  "name": "datawrap",
+  "version": "1.0.0",
+  "description": "Datawrap is a very lightweight wrapper to help with interacting with a database. It includes simple reusable methods, and base class for simple mapping.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpleasant/libraries.git"
+  },
+  "keywords": [
+    "database",
+    "wrapper"
+  ],
+  "author": "Jeremy Pleasant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpleasant/libraries/issues"
+  },
+  "homepage": "https://github.com/jpleasant/libraries#readme"
+}
