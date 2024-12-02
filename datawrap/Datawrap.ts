@@ -9,7 +9,7 @@ export interface DataWrap {
      * @param parameters
      * @returns Promise<T>[]
      */
-    query<T>(sqlQuery:string, parameters?:SQLParameter[]):Promise<T>[],
+    query<T>(sqlQuery:string, parameters?:SQLParameter[]):Promise<T[]>,
 
     /**
      * insert is used for insert queries. It differs from query only in that it returns the id of the inserted row.
@@ -112,6 +112,7 @@ export type DataWrapConfig = {
     username:string,
     password:string,
     maxConnections:number,
+    provider?:"mysql"
 }
 
 
