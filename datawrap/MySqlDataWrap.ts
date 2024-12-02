@@ -1,5 +1,6 @@
 import {FieldPacket, Pool, QueryResult, ResultSetHeader, RowDataPacket} from "mysql2/promise";
 import { DataWrap, SQLParameter, TransactionQuery } from "./Datawrap";
+import { DataWrapEntity } from "./DataWrapEntity";
 
 
 
@@ -86,8 +87,12 @@ export class MySqlDataWrap implements DataWrap {
         finally {
             connection.release();
         }
-
-
+        
+    }
+    
+    public async get<T>(entity:DataWrapEntity, id:unknown):Promise<T[]>{
+        
+        return []
     }
 
 }
