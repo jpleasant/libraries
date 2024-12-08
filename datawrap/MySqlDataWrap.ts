@@ -90,9 +90,29 @@ export class MySqlDataWrap implements DataWrap {
         
     }
     
-    public async get<T>(entity:DataWrapEntity, id:unknown):Promise<T[]>{
-        
-        return []
+    public async get<T>(entity:DataWrapEntity):Promise<T>{
+        //update to use generic of passed entity
+        const table = entity.getTableName();
+        const columns = entity.getColumns();
+        const columnNames = columns.map((column)=>column.name).join(', ');
+        const primaryKey = entity.getPrimaryKey();
+        const primaryKeyValue:unknown = entity[primaryKey as keyof typeof entity];
+        const sqlQuery = `SELECT ${columnNames} FROM ${table} WHERE ${primaryKey} = :${primaryKey}`;
+        const params:SQLParameter[] = [{name:primaryKey, value:primaryKeyValue}];
+        const rows = await this.query<T>(sqlQuery, params);
+        if(rows.length > 0){
+            const item = {} as T;
+            columns.forEach((column) => {
+                const propName = column.propertyName;
+                const columnName = column.name;
+                item[propName as keyof typeof item] = rows[0][columnName as keyof T];
+            })
+            return item as T;
+        }
+        else{
+            throw new Error('Entity not found when calling get');
+        }
+
     }
 
 }

@@ -44,7 +44,7 @@ export interface DataWrap {
      * @param id
      * @returns Promise<T>[]
      */
-    get<T>(entity:DataWrapEntity, id:unknown):Promise<T[]>,
+    get<T>(entity:DataWrapEntity, id:unknown):Promise<T>,
     /**
      * Add is used to insert a single entity into the database.
      * Insert queries are generated dynamically based on the entity's properties. It returns the id of the inserted row.
