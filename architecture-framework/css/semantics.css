@@ -1,0 +1,59 @@
+html {
+    /*background-color:gray;*/
+    font-family: Verdana, Tahoma, sans-serif;
+}
+header > nav {
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    ul {
+        list-style: none;
+        padding:.5em;
+        li{
+            display: inline;
+            padding:.5em;
+            a {
+                text-decoration: none;
+                font-size: 1.1em;
+                color:#FFFFFF;
+                &:hover{
+                    text-decoration:underline;
+                }
+            }
+        }
+        
+    }
+    figure {
+        
+    }
+}
+
+ul {
+    margin: 0;
+}
+
+h1 {
+    color: var(--text-color-primary);
+    font-size: 2em;
+}
+
+h2 {
+    color: var(--text-color-secondary);
+    font-size: 1.7em;
+}
+
+h3 {
+    color: var(--text-color-primary);
+    font-size: 1.4em;
+}
+h4 {
+    color: var(--text-color-secondary);
+    font-size: 1.2em;
+}
+
+main {
+    padding: 0 1em;
+}
